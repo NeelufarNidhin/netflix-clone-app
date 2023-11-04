@@ -1,0 +1,40 @@
+.banner{
+background-size: cover;
+height: 500px;
+color: white;
+}
+
+.title{
+   
+    font-size: 3rem;
+    font-weight: 800;
+    padding-bottom: 30px;
+
+}
+.content{
+   padding-top: 140px;
+   margin-left: 50px;
+}
+
+.btn1{
+padding-left: 2.4rem;
+padding-right: 2.4rem;
+background-color: white;
+color:black;
+padding-top: 1rem;
+padding-bottom: 1rem;
+font-weight: bold;
+font-size: medium;
+margin-right: 10px;
+}
+.btn2{
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+    background-color:gray;
+    color:white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-weight: bold;
+    font-size: medium;
+    }
+
