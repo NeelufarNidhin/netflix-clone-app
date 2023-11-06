@@ -1,5 +1,35 @@
+.row{
+    /* margin-left: 20px; */
+    color: #fff;
+   background-color: black;
+}
+.category-title{
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.posters{
+    display: flex;
+    padding: 20px;
+    overflow-x: scroll;
+    overflow-y:hidden ;
+}
+
+.posters::-webkit-scrollbar{
+    display: none;
+}
+
+
 .poster{
-    position: absolute;
-    height: 140px;
-    width: 200px;
+    max-height: 150px;
+    margin-right: 10px;
+    cursor: pointer;
+
+}
+
+
+.poster:hover{
+    transform: scale(1.5);
 }

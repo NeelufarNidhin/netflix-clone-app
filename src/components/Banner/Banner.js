@@ -1,20 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Banner.css'
+import axios from '../../axios'
+
+import { API_KEY, imageUrl } from '../../constants/constant'
+
 
 function Banner() {
+ const [movie,setMovie]=useState()
+ useEffect(() =>{
+   axios.get(`discover/movie?api_key=${API_KEY}&&language=en&with_genres=12`).then((response)=>{
+    console.log(response.data.results[0])
+    setMovie(response.data.results[10])
+   })
+ },[])
+ 
   return (
-    <div className='banner' style={{backgroundImage:"url(https://upload.wikimedia.org/wikipedia/en/2/2d/Eesho_Film_Poster.jpeg)"}}>
+    <div className='banner' style={{backgroundImage:`url(${movie? imageUrl+movie.backdrop_path : ""})`}}>
 
       <div className="content">
-      <h1 className='title'>Title</h1>
-      <p>Description of the thingd wwe want to diplay in our sample</p>
+      <h1 className='title'>{movie? movie.title : ""}</h1>
+     
       <div className="banner-button">
-      <button className='btn1'>Play</button>
-      <button className='btn2'>More Info</button>
+      <button className='button'>Play</button>
+      <button className='button'>More Info</button>
       
       </div>
+      <h1 className='description'>{movie?   movie.overview : ""}</h1>
       </div>
-
+    <div className="fade_bottom"></div>
     </div>
   )
 }
